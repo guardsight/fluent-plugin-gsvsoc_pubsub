@@ -36,3 +36,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.9"
   spec.add_development_dependency "test-unit"
 end
+
