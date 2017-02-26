@@ -65,6 +65,7 @@ Ubuntu 16.04
 ``` Shell
     1. $ sudo /usr/sbin/td-agent-gem install fluent-plugin-gsvsoc_pubsub --no-document 
 	2. $ sudo /usr/sbin/td-agent-gem install fluent-plugin-ping-message --no-document 
+	3. $ sudo cp /opt/td-agent/embedded/lib/ruby/gems/2.1.0/gems/fluent-plugin-gsvsoc_pubsub-0.1.0/lib/fluent/plugin/out_gsvsoc_pubsub.rb /etc/td-agent/plugin/
     -or-
     1. $ git clone https://github.com/guardsight/fluent-plugin-gsvsoc_pubsub.git 
     2. $ cd fluent-plugin-gsvsoc_pubsub; sudo cp lib/fluent/plugin/out_gsvsoc_pubsub.rb /etc/td-agent/plugin
@@ -161,7 +162,7 @@ rsyslog
 syslog-ng
 ``` Shell
 	/etc/syslog-ng/custom.d/10-d_gsvsoc.conf: 
-		destination d_tcp_gsvsoc { network("127.0.0.1" port(5140) flush-lines(2) flags(no-multi-line)); }; # adjust flush-lines in production
+		destination d_tcp_gsvsoc { network("127.0.0.1" transport(tcp) port(5140) flags(no-multi-line) flush-lines(2)); }; # adjust flush-lines in production
 	/etc/syslog-ng/custom.d/10-l_tcpEverything.conf: 
 		log {   source(s_local); source(s_network); destination(d_tcp_gsvsoc); };
 ```
