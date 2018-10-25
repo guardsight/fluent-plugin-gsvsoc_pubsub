@@ -1,12 +1,5 @@
 # fluent-plugin-gsvsoc_pubsub
 
-**Build Status**
-
-master:
-[![Build Status](https://travis-ci.com/guardsight/fluent-plugin-gsvsoc_pubsub.svg?token=vj7aEcqv8qvpJXs3fVLL&branch=master)](https://travis-ci.com/guardsight/fluent-plugin-gsvsoc_pubsub)
-develop:
-[![Build Status](https://travis-ci.com/guardsight/fluent-plugin-gsvsoc_pubsub.svg?token=vj7aEcqv8qvpJXs3fVLL&branch=develop)](https://travis-ci.com/guardsight/fluent-plugin-gsvsoc_pubsub)
-
 # SYNOPSIS
 
 Event Delivery Service: [Fluentd](http://www.fluentd.org/) \[fluent-plugin-gsvsoc_pubsub] -> [Google Pub/Sub](https://cloud.google.com/pubsub/) <- \[gs-vsoc-subscriber] [GuardSight](https://www.guardsight.com)
